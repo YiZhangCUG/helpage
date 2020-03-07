@@ -1,6 +1,6 @@
 #include "helpage.h"
 
-gctl::DispHelp::DispHelp()
+DispHelp::DispHelp()
 {
 	front_space = 0;
 	back_space = 10;
@@ -10,24 +10,24 @@ gctl::DispHelp::DispHelp()
 	author = "Author's information.";
 }
 
-gctl::DispHelp::option::option()
+DispHelp::option::option()
 {
 	flag_s = flag_l = message = "";
 }
 
-void gctl::DispHelp::AddHeadInfo(std::string s1,std::string s2,std::string s3,std::string s4)
+void DispHelp::AddHeadInfo(std::string s1,std::string s2,std::string s3,std::string s4)
 {
 	ex_name = s1; version = s2; descript = s3; author = s4;
 	return;
 }
 
-void gctl::DispHelp::AddUsage(std::string usg)
+void DispHelp::AddUsage(std::string usg)
 {
 	usages.push_back(usg);
 	return;
 }
 
-void gctl::DispHelp::AddOption(std::string msg,std::string sflag,std::string lflag)
+void DispHelp::AddOption(std::string msg,std::string sflag,std::string lflag)
 {
 	option tmp_option;
 	tmp_option.message = msg; tmp_option.flag_s = sflag; tmp_option.flag_l = lflag;
@@ -35,7 +35,7 @@ void gctl::DispHelp::AddOption(std::string msg,std::string sflag,std::string lfl
 	return;
 }
 
-void gctl::DispHelp::AddOptionSec(std::string msg,int index)
+void DispHelp::AddOptionSec(std::string msg,int index)
 {
 	if (index < 0)
 	{
@@ -45,19 +45,19 @@ void gctl::DispHelp::AddOptionSec(std::string msg,int index)
 	return;
 }
 
-void gctl::DispHelp::AddExample(std::string ex)
+void DispHelp::AddExample(std::string ex)
 {
 	examples.push_back(ex);
 	return;
 }
 
-void gctl::DispHelp::ChangeLayerOut(int left,int right)
+void DispHelp::ChangeLayerOut(int left,int right)
 {
 	front_space = left; back_space = right;
 	return;
 }
 
-void gctl::DispHelp::Show()
+void DispHelp::Show()
 {
 	int line_length;
 	std::string segment,full_message;

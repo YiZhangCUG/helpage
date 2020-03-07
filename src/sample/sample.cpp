@@ -6,7 +6,7 @@ int main(int argc, char const *argv[])
 	std::string ex_usage = ex_name;
 	ex_usage += " [-a] [-b] [-c] [-a] [-b] [-c] [-a] [-b] [-c] [-a] [-b] [-c] [-a] [-b] [-c] [-a] [-b] [-c] [-a] [-b] [-c] [-a] [-b] [-c] [-a] [-b] [-c]";
 	// 声明一个帮助信息类
-	gctl::DispHelp dh;
+	DispHelp dh;
 	// 设定左右空白大小
 	dh.ChangeLayerOut(5,10);
 	// 添加头信息
